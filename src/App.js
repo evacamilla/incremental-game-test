@@ -18,13 +18,24 @@ class App extends Component {
     this.setState({playerIsSet: true, nameOfPlayer: value});
   }
 
-  updateTotalPoints = () => {
+  increaseTotalPoints = () => {
     this.setState({totalPoints: this.state.totalPoints + this.state.pointsPerClick});
+  }
+
+  //this + increaseTotalPoints should be made as one function
+  removeFromTotalPoints = () => {
+    let cost = 10;
+    this.setState({totalPoints: this.state.totalPoints - cost});
   }
 
   updatePointsPerClick = () => {
     let increasedPointsPerClick = 3;
     this.setState({pointsPerClick: this.state.pointsPerClick + increasedPointsPerClick});
+  }
+
+  makeAnUpdate = () => {
+    this.removeFromTotalPoints();
+    this.updatePointsPerClick();
   }
 
   render() {
@@ -40,8 +51,10 @@ class App extends Component {
               Points: {this.state.totalPoints}
             </h3>
             <p>Ppc: {this.state.pointsPerClick}</p>
-            <Button onClick={this.updateTotalPoints} value="Click me"/>
-            <Button onClick={this.updatePointsPerClick} value="Update" />
+            <Button onClick={this.increaseTotalPoints} value="Click me" />
+            <Button onClick={this.makeAnUpdate} value="Update" />
+            <br/>
+
           </div>
           ) : (
           <NameForm handleNameForm={this.handleNameForm}/>
