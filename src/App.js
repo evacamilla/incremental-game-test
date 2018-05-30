@@ -3,7 +3,7 @@ import './App.css';
 import Header from './components/Header.js';
 import NameForm from './components/NameForm.js';
 import Button from './components/Button.js';
-import Updates from './components/Updates.js'
+import Update from './components/Update.js'
 
 class App extends Component {
 
@@ -12,7 +12,8 @@ class App extends Component {
     playerIsSet: false,
     nameOfPlayer: '',
     totalPoints: 0,
-    pointsPerClick: 1
+    pointsPerClick: 1,
+    generatedPointsPerSecond: 0
   }
 
   handleNameForm = (value) => {
@@ -55,7 +56,7 @@ class App extends Component {
             <Button onClick={this.increaseTotalPoints} value="Click me" />
             <Button onClick={this.makeAnUpdate} value="Update" />
             <br/>
-            <Updates />
+            <Update />
 
           </div>
           ) : (
