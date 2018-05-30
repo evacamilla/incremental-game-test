@@ -3,6 +3,7 @@ import './App.css';
 import Header from './components/Header.js';
 import NameForm from './components/NameForm.js';
 import Button from './components/Button.js';
+import Updates from './components/Updates.js'
 
 class App extends Component {
 
@@ -54,6 +55,7 @@ class App extends Component {
             <Button onClick={this.increaseTotalPoints} value="Click me" />
             <Button onClick={this.makeAnUpdate} value="Update" />
             <br/>
+            <Updates />
 
           </div>
           ) : (
