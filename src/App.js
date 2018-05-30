@@ -3,7 +3,9 @@ import './App.css';
 import Header from './components/Header.js';
 import NameForm from './components/NameForm.js';
 import Button from './components/Button.js';
-import Update from './components/Update.js'
+import Update from './components/Update.js';
+import CellPhone from './components/CellPhone.js';
+import Extentions from './components/Extentions.js';
 
 class App extends Component {
 
@@ -25,19 +27,17 @@ class App extends Component {
   }
 
   //this + increaseTotalPoints should be made as one function
-  removeFromTotalPoints = () => {
-    let cost = 10;
+  removeFromTotalPoints = (cost) => {
     this.setState({totalPoints: this.state.totalPoints - cost});
   }
 
-  updatePointsPerClick = () => {
-    let increasedPointsPerClick = 3;
-    this.setState({pointsPerClick: this.state.pointsPerClick + increasedPointsPerClick});
+  updatePointsPerClick = (effect) => {
+    this.setState({pointsPerClick: this.state.pointsPerClick + effect});
   }
 
-  makeAnUpdate = () => {
-    this.removeFromTotalPoints();
-    this.updatePointsPerClick();
+  makeAnUpdate = (cost, effect) => {
+    this.removeFromTotalPoints(cost);
+    this.updatePointsPerClick(effect);
   }
 
   render() {
@@ -52,11 +52,12 @@ class App extends Component {
             <h3>
               Points: {this.state.totalPoints}
             </h3>
-            <p>Ppc: {this.state.pointsPerClick}</p>
+            <h3>Ppc: {this.state.pointsPerClick}</h3>
             <Button onClick={this.increaseTotalPoints} value="Click me" />
             <Button onClick={this.makeAnUpdate} value="Update" />
             <br/>
-            <Update />
+            <CellPhone makeAnUpdate={this.makeAnUpdate}/>
+            <Extentions makeAnUpdate={this.makeAnUpdate}/>
 
           </div>
           ) : (

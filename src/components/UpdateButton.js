@@ -5,7 +5,8 @@ function UpdateButton(props){
         <button onClick={props.onClick}>
             {props.title}<br />
             {props.description} <br />
-            {props.img}</button>
+            {props.img}<br />
+            {props.effect}</button>
     );
 }
 
