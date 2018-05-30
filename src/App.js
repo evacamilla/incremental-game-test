@@ -10,15 +10,21 @@ class App extends Component {
     //unneccessary to have playerIsSet? just check if name has value? 
     playerIsSet: false,
     nameOfPlayer: '',
-    points: 0
+    totalPoints: 0,
+    pointsPerClick: 1
   }
 
   handleNameForm = (value) => {
     this.setState({playerIsSet: true, nameOfPlayer: value});
   }
 
-  updatePoints = () => {
-    this.setState({points: this.state.points + 1});
+  updateTotalPoints = () => {
+    this.setState({totalPoints: this.state.totalPoints + this.state.pointsPerClick});
+  }
+
+  updatePointsPerClick = () => {
+    let increasedPointsPerClick = 3;
+    this.setState({pointsPerClick: this.state.pointsPerClick + increasedPointsPerClick});
   }
 
   render() {
@@ -31,9 +37,11 @@ class App extends Component {
               Player: {this.state.nameOfPlayer}
             </h2>
             <h3>
-              Points: {this.state.points}
+              Points: {this.state.totalPoints}
             </h3>
-            <Button onClick={this.updatePoints} value="Click for points"/>
+            <p>Ppc: {this.state.pointsPerClick}</p>
+            <Button onClick={this.updateTotalPoints} value="Click me"/>
+            <Button onClick={this.updatePointsPerClick} value="Update" />
           </div>
           ) : (
           <NameForm handleNameForm={this.handleNameForm}/>
