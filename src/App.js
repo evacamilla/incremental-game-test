@@ -6,6 +6,7 @@ import Button from './components/Button.js';
 import CellPhone from './components/CellPhone.js';
 import Extentions from './components/Extentions.js';
 import Nicole from './components/Nicole.js';
+import Tinkerbell from './components/Tinkerbell.js';
 
 class App extends Component {
 
@@ -32,13 +33,23 @@ class App extends Component {
     this.setState({totalPoints: this.state.totalPoints - cost});
   }
 
+  //make one function out of these??
   updatePointsPerClick = (effect) => {
     this.setState({pointsPerClick: this.state.pointsPerClick + effect});
   }
 
-  makeAnUpgrade = (cost, effect) => {
+  updateGeneratedPoints = (effect) => {
+    this.setState({generatedPointsPerSecond: this.state.generatedPointsPerSecond + effect});
+  }
+
+  makeAnUpgrade = (cost, auto, effect) => {
     this.removeFromTotalPoints(cost);
-    this.updatePointsPerClick(effect);
+
+    auto ? (
+      this.updateGeneratedPoints(effect)
+      ) : (
+      this.updatePointsPerClick(effect)
+    );
   }
 
   render() {
@@ -53,12 +64,18 @@ class App extends Component {
             <h3>
               Points: {this.state.totalPoints}
             </h3>
-            <h3>Ppc: {this.state.pointsPerClick}</h3>
+            <h3>
+              Ppc: {this.state.pointsPerClick}
+              </h3>
+            <h3>
+              Generated: {this.state.generatedPointsPerSecond}
+              </h3>
             <Button onClick={this.increaseTotalPoints} value="Click me" />
             <br/>
             <CellPhone makeAnUpgrade={this.makeAnUpgrade}/>
             <Extentions makeAnUpgrade={this.makeAnUpgrade}/>
-            <Nicole /> 
+            <Nicole makeAnUpgrade={this.makeAnUpgrade}/> 
+            <Tinkerbell makeAnUpgrade={this.makeAnUpgrade}/>
           </div>
           ) : (
           <NameForm handleNameForm={this.handleNameForm}/>

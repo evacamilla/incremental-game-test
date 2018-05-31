@@ -27,6 +27,8 @@ TODO:
 
 -separating components.. updates in one folder
 
+-state type?
+
 
 
 -do something reusable for updates...a lot is the same. state, function

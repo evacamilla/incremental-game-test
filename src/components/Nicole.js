@@ -8,15 +8,15 @@ class Nicole extends Component {
         description: 'gewewhw',
         imgUrl: 'url(https://images-production.global.ssl.fastly.net/uploads/photos/file/113795/nicole-richie-aug-2003.jpg)',
         cost: 1000,
-        type: '',
+        auto: false,
         effect: 320,
         timesUpgraded: 0,
-        activated: false
+        activated: true
     }
 
     handleUpgrade = (event) => {
         //send cost + increasedPoints to change state in App.js
-        this.props.makeAnUpgrade(this.state.cost, this.state.effect);
+        this.props.makeAnUpgrade(this.state.cost, this.state.auto, this.state.effect);
 
         //change state here.. effect*0.90^timesUpgrades
         let newEffect = this.state.effect * 0.95 ^ this.state.timesUpgraded;
@@ -30,9 +30,13 @@ class Nicole extends Component {
     }
 
     render(){
+        let activeOrNot = 'not-active'
+        this.state.activated ? (
+            activeOrNot = 'active'
+        ) :( activeOrNot = 'not-active'); 
         return(
-            <div className='not-active'>
-                <UpgradeButton imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
+            <div>
+                <UpgradeButton toggle={activeOrNot} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
                 <UpgradeDescription 
                     title={this.state.title} 
                     effect={this.state.effect} 

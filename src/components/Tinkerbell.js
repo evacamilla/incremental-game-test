@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import UpgradeButton from './UpgradeButton.js';
 import UpgradeDescription from './UpgradeDescription.js';
 
-class Extentions extends Component {
+class Tinkerbell extends Component {
     state = {
-        title: 'Extensions',
+        title: 'Tinkerbell',
         description: 'gewewhw',
-        imgUrl: 'url(https://i.pinimg.com/originals/f9/0e/00/f90e001e6aeef5d7cecfb0ebe3e76166.jpg)',
+        imgUrl: 'url(https://cms.barstoolsports.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-22-at-3.14.34-PM.png)',
         cost: 400,
-        auto: true,
-        effect: 0.1,
+        auto: false,
+        effect: 100,
         timesUpgraded: 0,
         activated: false
     }
@@ -49,4 +49,4 @@ class Extentions extends Component {
 }
 
 
-export default Extentions;
+export default Tinkerbell;
