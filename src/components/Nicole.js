@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import UpdateButton from './UpdateButton.js';
 
-class Extentions extends Component {
+class Nicole extends Component {
     state = {
-        title: 'Extensions',
+        title: 'Nicole',
         description: 'gewewhw',
-        imgUrl: 'url(https://i.pinimg.com/originals/f9/0e/00/f90e001e6aeef5d7cecfb0ebe3e76166.jpg)',
-        cost: 400,
+        imgUrl: 'url(https://images-production.global.ssl.fastly.net/uploads/photos/file/113795/nicole-richie-aug-2003.jpg)',
+        cost: 1000,
         type: '',
-        effect: 100,
+        effect: 320,
         timesUpdated: 0,
         activated: false
     }
@@ -24,24 +24,24 @@ class Extentions extends Component {
             timesUpdated: this.state.timesUpdated + 1
         });
 
-        //some animation
+        //some animation + sound
 
     }
 
     render(){
         return(
-            <div>
+            <div className='not-active'>
                 <br />
                 <UpdateButton imgUrl={this.state.imgUrl} onClick={this.handleUpdate} />
-
-                <p>{this.state.title}</p>
-                <p>{this.state.description}</p>
-                <p>{this.state.cost}</p>
-                <p>{this.state.effect}</p>
+                <div>
+                    <p>{this.state.title}</p>
+                    <p>{this.state.description}</p>
+                    <p>{this.state.cost}</p>
+                    <p>{this.state.effect}</p>
+                </div>
             </div>
         );
     }
 }
 
-
-export default Extentions;
+export default Nicole;

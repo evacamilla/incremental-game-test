@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import UpdateButton from './UpdateButton.js';
+import Button from './Button.js';
 
 class CellPhone extends Component {
     state = {
         title: 'Cell phone',
         description: 'gewewhw',
-        img: 'urlwew',
+        imgUrl: 'url(https://images-na.ssl-images-amazon.com/images/I/41QDbaubnHL._SX425_.jpg)',
         cost: 500,
         type: '',
         effect: 150,
@@ -25,15 +25,21 @@ class CellPhone extends Component {
             timesUpdated: this.state.timesUpdated + 1
         });
 
-        //some animation
+        //some animation + sound
 
     }
 
     render(){
         return(
-            <div>
+            <div className='not-active'>
                 <br />
-                <UpdateButton onClick={this.handleUpdate} title={this.state.title} description={this.state.description} img={this.state.img} effect={this.state.effect}/>
+                <UpdateButton imgUrl={this.state.imgUrl} onClick={this.handleUpdate} />
+                <div>
+                    <p>{this.state.title}</p>
+                    <p>{this.state.description}</p>
+                    <p>{this.state.cost}</p>
+                    <p>{this.state.effect}</p>
+                </div>
             </div>
         );
     }

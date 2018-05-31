@@ -26,3 +26,20 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.update-button {
+  width:100px;
+  height: 100px;
+  opacity: 0.5;
+  background-size: cover;
+}
+
+.active {
+  border:1px solid pink;
+}
+
+.not-active {
+  border: none;
+}
+
+

@@ -3,9 +3,9 @@ import './App.css';
 import Header from './components/Header.js';
 import NameForm from './components/NameForm.js';
 import Button from './components/Button.js';
-import Update from './components/Update.js';
 import CellPhone from './components/CellPhone.js';
 import Extentions from './components/Extentions.js';
+import Nicole from './components/Nicole.js';
 
 class App extends Component {
 
@@ -14,6 +14,7 @@ class App extends Component {
     playerIsSet: false,
     nameOfPlayer: '',
     totalPoints: 0,
+    fame: 0,
     pointsPerClick: 1,
     generatedPointsPerSecond: 0
   }
@@ -54,11 +55,10 @@ class App extends Component {
             </h3>
             <h3>Ppc: {this.state.pointsPerClick}</h3>
             <Button onClick={this.increaseTotalPoints} value="Click me" />
-            <Button onClick={this.makeAnUpdate} value="Update" />
             <br/>
             <CellPhone makeAnUpdate={this.makeAnUpdate}/>
             <Extentions makeAnUpdate={this.makeAnUpdate}/>
-
+            <Nicole /> 
           </div>
           ) : (
           <NameForm handleNameForm={this.handleNameForm}/>

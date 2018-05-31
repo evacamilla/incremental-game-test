@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import updateButton from './UpdateButton.js';
 import UpdateButton from './UpdateButton.js';
 
@@ -30,21 +29,12 @@ class Update extends Component {
     }
 }
 
-let udatesArray = [];
-
     const cellPhone = {
         title: 'cellphone',
         description: 'descr',
         img: 'url here',
         cost: 200,
         effectiveness: 2
-    }
-    const hairExtensions = {
-        title: 'hair extentions',
-        description: 'descr about',
-        img: 'url hair',
-        cost: 300,
-        effectiveness: 3
     }
 
 

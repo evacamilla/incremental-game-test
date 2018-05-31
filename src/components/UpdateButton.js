@@ -2,11 +2,9 @@ import React from 'react';
 
 function UpdateButton(props){
     return(
-        <button onClick={props.onClick}>
-            {props.title}<br />
-            {props.description} <br />
-            {props.img}<br />
-            {props.effect}</button>
+        <button style={{backgroundImage: props.imgUrl}} className="update-button" onClick={props.onClick}>
+            <img className="update-image" src={props.value} />
+        </button>
     );
 }
 
