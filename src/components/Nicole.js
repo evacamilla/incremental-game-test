@@ -30,18 +30,15 @@ class Nicole extends Component {
     }
 
     render(){
-        let activeOrNot = 'not-active'
-        this.state.activated ? (
-            activeOrNot = 'active'
-        ) :( activeOrNot = 'not-active'); 
         return(
             <div>
-                <UpgradeButton toggle={activeOrNot} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
+                <UpgradeButton activeOrNot={this.state.activated ? 'active' : 'not-active'} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
                 <UpgradeDescription 
                     title={this.state.title} 
                     effect={this.state.effect} 
                     description={this.state.description} 
                     cost={this.state.cost} 
+                    timesUpgraded={this.state.timesUpgraded}
                 />
             </div>
         );
