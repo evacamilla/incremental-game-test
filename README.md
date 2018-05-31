@@ -17,9 +17,9 @@ TODO:
 
 -add fame points... regular points: money?
 
--function for automatic update.. 0.1 points per second fex
+-function for automatic update..
 
--updateDescription div visible when hover updateButton
+-style updateDescription div when visible
 
 -function for activating update.. if cost<=totalPoints...toggle class
 

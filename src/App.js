@@ -55,30 +55,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
-        {this.state.playerIsSet ? (
-          <div>
-            <h2>
-              Player: {this.state.nameOfPlayer}
-            </h2>
-            <h3>
-              Points: {this.state.totalPoints}
-            </h3>
-            <h3>
-              Ppc: {this.state.pointsPerClick}
-              </h3>
-            <h3>
-              Generated: {this.state.generatedPointsPerSecond}
-              </h3>
+        
+        {this.state.playerIsSet ? (  
+          <div>        
+            <Header nameOfPlayer={this.state.nameOfPlayer} playerStats={this.state.totalPoints + " " + this.state.pointsPerClick + " " + this.state.generatedPointsPerSecond}/>
             <Button onClick={this.increaseTotalPoints} value="Click me" />
             <br/>
             <CellPhone makeAnUpgrade={this.makeAnUpgrade}/>
             <Extentions makeAnUpgrade={this.makeAnUpgrade}/>
             <Nicole makeAnUpgrade={this.makeAnUpgrade}/> 
             <Tinkerbell makeAnUpgrade={this.makeAnUpgrade}/>
-          </div>
+            </div>
+
           ) : (
+            <div>
+          <Header />
           <NameForm handleNameForm={this.handleNameForm}/>
+          </div>
           )}
         
         
