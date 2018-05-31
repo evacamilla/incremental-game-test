@@ -17,15 +17,15 @@ class App extends Component {
     totalPoints: 0,
     fame: 0,
     pointsPerClick: 1,
-    generatedPointsPerSecond: 0
+    pointsPerSecond: 0
   }
 
   handleNameForm = (value) => {
     this.setState({playerIsSet: true, nameOfPlayer: value});
   }
 
-  increaseTotalPoints = () => {
-    this.setState({totalPoints: this.state.totalPoints + this.state.pointsPerClick});
+  increaseTotalPoints = (props) => {
+    this.setState({totalPoints: this.state.totalPoints + props});
   }
 
   //this + increaseTotalPoints should be made as one function
@@ -38,43 +38,45 @@ class App extends Component {
     this.setState({pointsPerClick: this.state.pointsPerClick + effect});
   }
 
-  updateGeneratedPoints = (effect) => {
-    this.setState({generatedPointsPerSecond: this.state.generatedPointsPerSecond + effect});
+  updatePointsPerSecond = (effect) => {
+    this.setState({pointsPerSecond: this.state.pointsPerSecond + effect});
   }
 
   makeAnUpgrade = (cost, auto, effect) => {
     this.removeFromTotalPoints(cost);
-
-    auto ? (
-      this.updateGeneratedPoints(effect)
-      ) : (
-      this.updatePointsPerClick(effect)
-    );
+    //if automatic update update generated point, else update points per click
+    auto ? this.updatePointsPerSecond(effect) : this.updatePointsPerClick(effect);
   }
 
   render() {
     return (
       <div className="App">
-        
         {this.state.playerIsSet ? (  
           <div>        
-            <Header nameOfPlayer={this.state.nameOfPlayer} playerStats={this.state.totalPoints + " " + this.state.pointsPerClick + " " + this.state.generatedPointsPerSecond}/>
-            <Button onClick={this.increaseTotalPoints} value="Click me" />
-            <br/>
+            <Header 
+              nameOfPlayer={this.state.nameOfPlayer} 
+              totalPoints={this.state.totalPoints} 
+              pointsPerClick={this.state.pointsPerClick}
+              pointsPerSecond={this.state.pointsPerSecond}
+            />
+            
+            <Button 
+              onClick={() => this.increaseTotalPoints(this.state.pointsPerClick)} 
+              backgroundImage='url(http://reversespeech.s3.amazonaws.com/imgs/paris-hilton-celibate.jpg)'
+              className='clicker'
+            />
+
             <CellPhone makeAnUpgrade={this.makeAnUpgrade}/>
             <Extentions makeAnUpgrade={this.makeAnUpgrade}/>
             <Nicole makeAnUpgrade={this.makeAnUpgrade}/> 
             <Tinkerbell makeAnUpgrade={this.makeAnUpgrade}/>
-            </div>
-
-          ) : (
-            <div>
-          <Header />
-          <NameForm handleNameForm={this.handleNameForm}/>
           </div>
-          )}
-        
-        
+          ) : (
+          <div>
+            <Header />
+            <NameForm handleNameForm={this.handleNameForm}/>
+          </div>
+        )}
       </div>
     );
   }
