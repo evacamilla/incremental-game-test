@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import UpdateButton from './UpdateButton.js';
-import UpdateDescription from './UpdateDescription.js';
+import UpgradeButton from './UpgradeButton.js';
+import UpgradeDescription from './UpgradeDescription.js';
 
 class CellPhone extends Component {
     state = {
@@ -10,19 +10,19 @@ class CellPhone extends Component {
         cost: 500,
         type: '',
         effect: 150,
-        timesUpdated: 0,
+        timesUpgraded: 0,
         activated: false
     }
 
-    handleUpdate = (event) => {
+    handleUpgrade = (event) => {
         //send cost + increasedPoints to change state in App.js
-        this.props.makeAnUpdate(this.state.cost, this.state.effect);
+        this.props.makeAnUpgrade(this.state.cost, this.state.effect);
 
-        //change state here.. effect*0.90^timesUpdates
-        let newEffect = this.state.effect * 0.95 ^ this.state.timesUpdated;
+        //change state here.. effect*0.90^timesUpgrades
+        let newEffect = this.state.effect * 0.95 ^ this.state.timesUpgraded;
         this.setState({
             effect: newEffect,
-            timesUpdated: this.state.timesUpdated + 1
+            timesUpgraded: this.state.timesUpgraded + 1
         });
 
         //some animation + sound
@@ -33,8 +33,8 @@ class CellPhone extends Component {
         return(
             <div className='not-active'>
                 <br />
-                <UpdateButton imgUrl={this.state.imgUrl} onClick={this.handleUpdate} />
-                <UpdateDescription 
+                <UpgradeButton imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
+                <UpgradeDescription 
                     title={this.state.title} 
                     effect={this.state.effect} 
                     description={this.state.description} 

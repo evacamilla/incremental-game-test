@@ -1,6 +1,6 @@
 import React from 'react';
 
-function UpdateDescription(props){
+function UpgradeDescription(props){
     return(
         <div>
             <p>{props.title}</p>
@@ -11,4 +11,4 @@ function UpdateDescription(props){
     );
 }
 
-export default UpdateDescription;
+export default UpgradeDescription;

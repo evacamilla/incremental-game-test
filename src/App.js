@@ -36,7 +36,7 @@ class App extends Component {
     this.setState({pointsPerClick: this.state.pointsPerClick + effect});
   }
 
-  makeAnUpdate = (cost, effect) => {
+  makeAnUpgrade = (cost, effect) => {
     this.removeFromTotalPoints(cost);
     this.updatePointsPerClick(effect);
   }
@@ -56,8 +56,8 @@ class App extends Component {
             <h3>Ppc: {this.state.pointsPerClick}</h3>
             <Button onClick={this.increaseTotalPoints} value="Click me" />
             <br/>
-            <CellPhone makeAnUpdate={this.makeAnUpdate}/>
-            <Extentions makeAnUpdate={this.makeAnUpdate}/>
+            <CellPhone makeAnUpgrade={this.makeAnUpgrade}/>
+            <Extentions makeAnUpgrade={this.makeAnUpgrade}/>
             <Nicole /> 
           </div>
           ) : (
