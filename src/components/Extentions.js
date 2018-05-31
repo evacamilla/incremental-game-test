@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UpdateButton from './UpdateButton.js';
+import UpdateDescription from './UpdateDescription.js';
 
 class Extentions extends Component {
     state = {
@@ -33,11 +34,12 @@ class Extentions extends Component {
             <div>
                 <br />
                 <UpdateButton imgUrl={this.state.imgUrl} onClick={this.handleUpdate} />
-
-                <p>{this.state.title}</p>
-                <p>{this.state.description}</p>
-                <p>{this.state.cost}</p>
-                <p>{this.state.effect}</p>
+                <UpdateDescription 
+                    title={this.state.title} 
+                    effect={this.state.effect} 
+                    description={this.state.description} 
+                    cost={this.state.cost} 
+                />
             </div>
         );
     }

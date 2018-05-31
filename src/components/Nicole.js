@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UpdateButton from './UpdateButton.js';
+import UpdateDescription from './UpdateDescription';
 
 class Nicole extends Component {
     state = {
@@ -31,14 +32,13 @@ class Nicole extends Component {
     render(){
         return(
             <div className='not-active'>
-                <br />
                 <UpdateButton imgUrl={this.state.imgUrl} onClick={this.handleUpdate} />
-                <div>
-                    <p>{this.state.title}</p>
-                    <p>{this.state.description}</p>
-                    <p>{this.state.cost}</p>
-                    <p>{this.state.effect}</p>
-                </div>
+                <UpdateDescription 
+                    title={this.state.title} 
+                    effect={this.state.effect} 
+                    description={this.state.description} 
+                    cost={this.state.cost} 
+                />
             </div>
         );
     }
