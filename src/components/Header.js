@@ -3,11 +3,13 @@ import React from 'react';
 function Header(props){
     return(
         <header className="App-header">
-            <h1 className="App-title">Clicker Game</h1>
+            <h1 className="App-title">Paris Game</h1>
             <h2>{props.nameOfPlayer}</h2>
-            <p>€€€: {props.totalPoints}</p>
-            <p>Klocka: {props.pointsPerSecond}</p>
-            <p>Pil: {props.pointsPerClick}</p>
+            <div className={props.statsToggle}>
+                <p>€€€: {props.totalPoints}</p>
+                <p>click per seconds: {props.pointsPerSecond}</p>
+                <p>per click: {props.pointsPerClick}</p>
+            </div>
         </header>
     );
 }
