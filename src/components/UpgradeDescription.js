@@ -2,12 +2,12 @@ import React from 'react';
 
 function UpgradeDescription(props){
     return(
-        <div className={'upgrade-description'}>
+        <div id={props.id} className='visa-test'>
             <p>{props.title}</p>
             <p>{props.description}</p>
-            <p>{props.cost}</p>
-            <p>{props.effect}</p>
-            <p>{props.timesUpgraded}</p>
+            <p>cost: {props.cost}</p>
+            <p>effect: {props.effect}</p>
+            <p>how many: {props.timesUpgraded}</p>
         </div>
     );
 }

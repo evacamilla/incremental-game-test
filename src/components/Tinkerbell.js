@@ -6,7 +6,7 @@ class Tinkerbell extends Component {
     state = {
         title: 'Tinkerbell',
         description: 'gewewhw',
-        imgUrl: 'url(https://cms.barstoolsports.com/wp-content/uploads/2015/04/Screen-Shot-2015-04-22-at-3.14.34-PM.png)',
+        imgUrl: 'url(https://s7.ralphlauren.com/is/image/PoloGSI/s7-168187_lifestyle?$rl_392_pdp$)',
         cost: 400,
         auto: false,
         effect: 100,
@@ -15,23 +15,31 @@ class Tinkerbell extends Component {
     }
 
     handleUpgrade = (event) => {
-        //send cost + increasedPoints to change state in App.js
+        //auto is for deciding if pointsPerSecond or pointsPerClick should be updated
+        //send cost + effect to update states in App.js
         this.props.makeAnUpgrade(this.state.cost, this.state.auto, this.state.effect);
 
-        //change state here.. effect*0.90^timesUpgrades
-        let newEffect = this.state.effect * 0.95 ^ this.state.timesUpgraded;
+        //make the this.sta.teeffect less efficient for every upgrade
+        //increase times upgraded/how many of the upgrade you have
+        //effect*0.90^timesUpgrades
+        let newEffect = this.state.effect * (0.99 * 0.99);
         this.setState({
             effect: newEffect,
             timesUpgraded: this.state.timesUpgraded + 1
         });
 
-        //some animation
+        //TODO: some animation
 
     }
     render(){
+        let activeOrNot = 'not-active';
+        if(this.props.totalPoints > this.state.cost){
+            activeOrNot = 'active';
+        }
         return(
-            <div>
-                <UpgradeButton activeOrNot={this.state.activated ? 'active' : 'not-active'} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
+            <div className="upgrade">
+                <UpgradeButton activeOrNot={activeOrNot} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
+                <div>{this.props.totalpoints}</div>
                 <UpgradeDescription 
                     title={this.state.title} 
                     effect={this.state.effect} 

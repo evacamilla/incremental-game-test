@@ -7,7 +7,7 @@ class Nicole extends Component {
         title: 'Nicole',
         description: 'gewewhw',
         imgUrl: 'url(https://images-production.global.ssl.fastly.net/uploads/photos/file/113795/nicole-richie-aug-2003.jpg)',
-        cost: 1000,
+        cost: 100,
         auto: false,
         effect: 320,
         timesUpgraded: 0,
@@ -30,9 +30,13 @@ class Nicole extends Component {
     }
 
     render(){
+        let activeOrNot = 'not-active';
+        if(this.props.totalPoints > this.state.cost){
+            activeOrNot = 'active';
+        }
         return(
-            <div>
-                <UpgradeButton activeOrNot={this.state.activated ? 'active' : 'not-active'} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
+            <div className="upgrade">
+                <UpgradeButton activeOrNot={activeOrNot} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
                 <UpgradeDescription 
                     title={this.state.title} 
                     effect={this.state.effect} 

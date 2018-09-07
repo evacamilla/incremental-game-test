@@ -6,10 +6,10 @@ class CellPhone extends Component {
     state = {
         title: 'Cell phone',
         description: 'gewewhw',
-        imgUrl: 'url(https://images-na.ssl-images-amazon.com/images/I/41QDbaubnHL._SX425_.jpg)',
-        cost: 500,
+        imgUrl: 'url(https://i.pinimg.com/originals/7d/92/9f/7d929f6ffc9824938a46ad18a1585900.jpg)',
+        cost: 50,
         auto: true,
-        effect: 0.2,
+        effect: 2,
         timesUpgraded: 0,
         activated: false
     }
@@ -30,10 +30,15 @@ class CellPhone extends Component {
     }
 
     render(){
+        let activeOrNot = 'not-active';
+        if(this.props.totalPoints > this.state.cost){
+            activeOrNot = 'active';
+        }
         return(
-            <div>
-                <UpgradeButton activeOrNot={this.state.activated ? 'active' : 'not-active'} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
+            <div className="upgrade" id="cell-phone-wrapper">
+                <UpgradeButton id="cell-phone" activeOrNot={activeOrNot} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
                 <UpgradeDescription 
+                    id="cell-phone-description"
                     title={this.state.title} 
                     effect={this.state.effect} 
                     description={this.state.description} 

@@ -6,33 +6,39 @@ class Extentions extends Component {
     state = {
         title: 'Extensions',
         description: 'gewewhw',
-        imgUrl: 'url(https://i.pinimg.com/originals/f9/0e/00/f90e001e6aeef5d7cecfb0ebe3e76166.jpg)',
-        cost: 400,
-        auto: true,
-        effect: 0.1,
-        timesUpgraded: 0,
+        imgUrl: 'url(https://www.rapunzelofsweden.se/20.0.0.2/20541/cache/20541_77b54bc7394a3d07b67514e79b888e37.jpg)',
+        cost: 10,
+        auto: false,
+        effect: 1,
+        timesUpgraded: 1,
         activated: false
     }
 
     handleUpgrade = (event) => {
-        //send cost + increasedPoints to change state in App.js
+        //auto is for deciding if pointsPerSecond or pointsPerClick should be updated
+        //send cost + effect to update states in App.js
         this.props.makeAnUpgrade(this.state.cost, this.state.auto, this.state.effect);
 
-        //change state here.. effect*0.90^timesUpgrades
-        let newEffect = this.state.effect * 0.95 ^ this.state.timesUpgraded;
+        //make the this.sta.teeffect less efficient for every upgrade
+        //increase times upgraded/how many of the upgrade you have
+        //effect*0.90^timesUpgrades
+        let newEffect = this.state.effect * (0.99 * 0.99);
         this.setState({
             effect: newEffect,
             timesUpgraded: this.state.timesUpgraded + 1
         });
 
-        //some animation
+        //TODO: some animation
 
     }
-
     render(){
+        let activeOrNot = 'not-active';
+        if(this.props.totalPoints > this.state.cost){
+            activeOrNot = 'active';
+        }
         return(
-            <div>
-                <UpgradeButton activeOrNot={this.state.activated ? 'active' : 'not-active'} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
+            <div className="upgrade">
+                <UpgradeButton activeOrNot={activeOrNot} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
                 <UpgradeDescription 
                     title={this.state.title} 
                     effect={this.state.effect} 
