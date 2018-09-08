@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
-import UpgradeButton from './UpgradeButton.js';
-import UpgradeDescription from './UpgradeDescription.js';
+import UpgradeDiv from '../UpgradeDiv.js';
+import UpgradeDescription from '../UpgradeDescription.js';
 
-class Tinkerbell extends Component {
+class Extentions extends Component {
     state = {
-        title: 'Tinkerbell',
+        title: 'Extensions',
         description: 'gewewhw',
-        imgUrl: 'url(https://s7.ralphlauren.com/is/image/PoloGSI/s7-168187_lifestyle?$rl_392_pdp$)',
-        cost: 400,
+        imgUrl: 'https://www.rapunzelofsweden.se/20.0.0.2/20541/cache/20541_77b54bc7394a3d07b67514e79b888e37.jpg',
+        cost: 10,
         auto: false,
-        effect: 100,
-        timesUpgraded: 0,
+        effect: 1,
+        timesUpgraded: 1,
         activated: false
     }
 
@@ -38,8 +38,7 @@ class Tinkerbell extends Component {
         }
         return(
             <div className="upgrade">
-                <UpgradeButton activeOrNot={activeOrNot} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
-                <div>{this.props.totalpoints}</div>
+                <UpgradeDiv activeOrNot={activeOrNot} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
                 <UpgradeDescription 
                     title={this.state.title} 
                     effect={this.state.effect} 
@@ -53,4 +52,4 @@ class Tinkerbell extends Component {
 }
 
 
-export default Tinkerbell;
+export default Extentions;

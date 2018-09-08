@@ -13,17 +13,9 @@ https://github.com/evacamilla/incremental-game-test
 
 TODO:
 
--update of effect doesnt work properly...
-
 -add fame points... regular points: money?
 
--function for automatic update..
-
 -style updateDescription div when visible
-
--function for activating update.. if cost<=totalPoints...toggle class
-
--remove playerIsSet??
 
 -separating components.. updates in one folder
 
@@ -35,10 +27,18 @@ TODO:
 -
 
 -namespacing
--animation when loading
 -handle errors
 
 
 -local images
--add bootstrap
 ..STYLING
+
+avrunda till heltal i fame, cost, points
+
+icons for player statistics/costs etc
+
+REACTIONS:
+when user buys something
+when user makes first automatic update: congr message
+when user makes 10000 or something a message
+-animation when loading

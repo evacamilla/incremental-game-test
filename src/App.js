@@ -3,11 +3,12 @@ import './App.css';
 import Header from './components/Header.js';
 import PlayerStats from './components/PlayerStats.js';
 import NameForm from './components/NameForm.js';
-import Button from './components/Button.js';
-import CellPhone from './components/CellPhone.js';
-import Extentions from './components/Extentions.js';
-import Nicole from './components/Nicole.js';
-import Tinkerbell from './components/Tinkerbell.js';
+import Clicker from './components/Clicker.js';
+
+import CellPhone from './components/upgrades/CellPhone.js';
+import Extentions from './components/upgrades/Extentions.js';
+import Nicole from './components/upgrades/Nicole.js';
+import Tinkerbell from './components/upgrades/Tinkerbell.js';
 
 class App extends Component {
 
@@ -97,18 +98,16 @@ class App extends Component {
                 pointsPerSecond={pointsPerSecond}
                 automaticPointsMessage={automaticPointsMessage} />
 
-              <div className="clicker">
-                <Button className='clicker-img' onClick={this.increaseTotalPoints} 
-                  backgroundImage='url(https://orig00.deviantart.net/5499/f/2013/198/7/7/paris_hilton_png_by_brokenheartdesignz-d6du9ik.png)' />
-              </div>
+              <Clicker onClick={this.increaseTotalPoints}/>
 
               <div className="upgrades">
                 <h2>Upgrades</h2>
                 <div className="upgrades-wrapper">
-                  <CellPhone makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
                   <Extentions makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
+                  <CellPhone makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
                   <Nicole makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/> 
                   <Tinkerbell makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
+
                 </div>
               </div>
             </div>
@@ -118,13 +117,6 @@ class App extends Component {
             <div>
               <Header />
               <NameForm handleNameForm={this.handleNameForm} />
-              
-              <div>
-                <button className="test">hej</button>
-                <div className="visa-test">
-                  <p>testing</p>
-                </div>
-              </div>
             </div>
 
           )}

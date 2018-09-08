@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import UpgradeButton from './UpgradeButton.js';
-import UpgradeDescription from './UpgradeDescription';
+import UpgradeDiv from '../UpgradeDiv.js';
+import UpgradeDescription from '../UpgradeDescription.js';
 
-class Nicole extends Component {
+class CellPhone extends Component {
     state = {
-        title: 'Nicole',
+        title: 'Cell phone',
         description: 'gewewhw',
-        imgUrl: 'url(https://images-production.global.ssl.fastly.net/uploads/photos/file/113795/nicole-richie-aug-2003.jpg)',
-        cost: 100,
-        auto: false,
-        effect: 320,
+        imgUrl: 'https://i.pinimg.com/originals/7d/92/9f/7d929f6ffc9824938a46ad18a1585900.jpg',
+        cost: 50,
+        auto: true,
+        effect: 2,
         timesUpgraded: 0,
-        activated: true
+        activated: false
     }
 
     handleUpgrade = (event) => {
@@ -25,7 +25,7 @@ class Nicole extends Component {
             timesUpgraded: this.state.timesUpgraded + 1
         });
 
-        //some animation
+        //some animation + sound
 
     }
 
@@ -35,8 +35,8 @@ class Nicole extends Component {
             activeOrNot = 'active';
         }
         return(
-            <div className="upgrade">
-                <UpgradeButton activeOrNot={activeOrNot} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
+            <div className="upgrade" id="cell-phone-wrapper">
+                <UpgradeDiv activeOrNot={activeOrNot} imgUrl={this.state.imgUrl} onClick={this.handleUpgrade} />
                 <UpgradeDescription 
                     title={this.state.title} 
                     effect={this.state.effect} 
@@ -49,4 +49,4 @@ class Nicole extends Component {
     }
 }
 
-export default Nicole;
+export default CellPhone;

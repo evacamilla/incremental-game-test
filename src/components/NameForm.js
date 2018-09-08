@@ -20,7 +20,7 @@ class NameForm extends Component {
 
     render(){
         return(
-            <div>
+            <div className="name-form">
                 Type in your name
                 <form onSubmit={this.handleSubmit}>
                     <input name="value" value={this.state.name} onChange={this.handleChange} type="text"/>
