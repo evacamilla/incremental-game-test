@@ -43,7 +43,8 @@ class App extends Component {
   updatePointsPerSecond = (effect) => {
     if (this.state.pointsPerSecond === 0) {
       //if its the first time user buys automatically generated points, 
-      //store the time of the event in this.state to be able to calculate seconds passed and increase total points based on that
+      //store the time of the event in this.state to be able to calculate seconds passed 
+      //and increase total points based on that
       this.setState({
         dateStart: new Date(),
         automaticPointsMessage: "Congratulations you bought your first automatic update!!"
@@ -57,12 +58,10 @@ class App extends Component {
 
   makeAnUpgrade = (cost, auto, effect) => {
     this.removeFromTotalPoints(cost);
-    //if automatic update update generated point, else update points per click
+    //if automatic update: update generated point, else: update points per click
     auto ? this.updatePointsPerSecond(effect) : this.updatePointsPerClick(effect);
   }
 
-  //WIP
-  //make every 10 seconds?
   automaticUpdate = () => {
     let dateNow = new Date();
     let secondsPassed = dateNow - this.state.dateStart;
@@ -107,7 +106,6 @@ class App extends Component {
                   <CellPhone makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
                   <Nicole makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/> 
                   <Tinkerbell makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
-
                 </div>
               </div>
             </div>

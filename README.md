@@ -13,22 +13,11 @@ https://github.com/evacamilla/incremental-game-test
 
 TODO:
 
--add fame points... regular points: money?
+--fame points updates too much at first update...
 
--style updateDescription div when visible
-
--separating components.. updates in one folder
-
--state type?
-
-
-
--do something reusable for updates...a lot is the same. state, function
--
 
 -namespacing
 -handle errors
-
 
 -local images
 ..STYLING
