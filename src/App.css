@@ -20,18 +20,20 @@ header {
   background-color: pink;
   color: white;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 .name-form {
   text-align: center;
 }
 
 .player-stats {
-  background: red;
+  margin: 0px auto;
+  text-align: center;
+  font-size: 1em;
 }
 
 .clicker {
-  border: 1px solid black;
+  margin: 0px auto;
 }
 
 /**Clicker**/
@@ -46,29 +48,32 @@ header {
 
 /**upgrades**/
 .upgrades {
-  border:1px solid red;
+}
+
+.upgrades-title {
+  text-align: center;
 }
 
 .upgrades-wrapper {
-  border:2px solid blue;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
 }
 
-.upgrade {
-  border:1px solid blue;
+.upgrade-div {
+  display: grid;
+  grid-template-columns: 80px auto;
 }
 
-
-.upgrade-img {
-  width: 80%;
-  border:4px solid red;
+.upgrade-img-div img {
+  width: 100%;
 }
 
+.upgrade-description {
+  font-size: 0.7em;
+}
 
 .not-active {
-  opacity: 0.5;
   cursor: default;
 }
 
@@ -77,16 +82,6 @@ header {
   opacity: initial;
   cursor: pointer;
 }
-
-.upgrade-description {
-  display: none;
-}
-
-.upgrade-div:hover + .upgrade-description {
-  display:block;
-  border:1px solid black;
-}
-
 .hide {
   display:none;
 }
@@ -105,21 +100,27 @@ header {
 .wrapper {  
   grid-template-columns: repeat(12, 1fr);
   grid-template-areas: 
-      "h h h h h h h h h h h h"
-      "p p p p p p p u u u u u"
-      "s s s s s s s s s s s s";
+      "h h h h h h h h s s s s"
+      "p p p p p p p p u u u u";
 }
 
 header {
   grid-area: h;
+  font-size: 1.5em;
 }
 
 .player-stats {
   grid-area: s;
 }
 
+
 .clicker {
   grid-area: p;
+}
+
+.clicker-img {
+  width: 500px;
+  height: 700px;
 }
 
 .upgrades {

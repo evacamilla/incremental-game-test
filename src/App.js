@@ -4,11 +4,12 @@ import Header from './components/Header.js';
 import PlayerStats from './components/PlayerStats.js';
 import NameForm from './components/NameForm.js';
 import Clicker from './components/Clicker.js';
-
 import CellPhone from './components/upgrades/CellPhone.js';
 import Extentions from './components/upgrades/Extentions.js';
 import Nicole from './components/upgrades/Nicole.js';
 import Tinkerbell from './components/upgrades/Tinkerbell.js';
+import Kim from './components/upgrades/Kim.js';
+import SimpleLife from './components/upgrades/SimpleLife.js';
 
 class App extends Component {
 
@@ -100,12 +101,14 @@ class App extends Component {
               <Clicker onClick={this.increaseTotalPoints}/>
 
               <div className="upgrades">
-                <h2>Upgrades</h2>
+                <h2 className="upgrades-title">Upgrades</h2>
                 <div className="upgrades-wrapper">
                   <Extentions makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
                   <CellPhone makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
                   <Nicole makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/> 
                   <Tinkerbell makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
+                  <Kim makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
+                  <SimpleLife makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
                 </div>
               </div>
             </div>

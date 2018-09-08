@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import UpgradeDiv from '../UpgradeDiv.js';
 
-class Tinkerbell extends Component {
+class SimpleLife extends Component {
     state = {
-        title: 'Tinkerbell',
+        title: 'Kim',
         description: 'gewewhw',
-        imgUrl: 'https://s7.ralphlauren.com/is/image/PoloGSI/s7-168187_lifestyle?$rl_392_pdp$',
-        cost: 200,
-        auto: false,
-        effect: 100,
+        imgUrl: 'https://data.whicdn.com/images/67242729/large.png',
+        cost: 50,
+        auto: true,
+        effect: 2,
         timesUpgraded: 0,
         activated: false
     }
@@ -30,27 +30,24 @@ class Tinkerbell extends Component {
         } else {
             console.log("You don't have enough money to update");
         }
-        
-
-        //TODO: some animation
-
     }
+
     render(){
         let activeOrNot = 'not-active';
         if(this.props.totalPoints > this.state.cost){
             activeOrNot = 'active';
         }
         return(
+            <div className="upgrade">
                 <UpgradeDiv 
                     activeOrNot={activeOrNot} 
                     imgUrl={this.state.imgUrl} 
                     onClick={this.handleUpgrade} 
-                    title={this.state.title} 
-                    effect={this.state.effect} 
+                    effect={this.state.effect}  
                     cost={this.state.cost} />
+            </div>
         );
     }
 }
 
-
-export default Tinkerbell;
+export default SimpleLife;
