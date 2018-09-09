@@ -35,6 +35,10 @@ header {
   width: 55%;
 }
 
+.chosen-paris-img {
+  border: 2px solid red;
+}
+
 .player-stats {
   margin: 0px auto;
   text-align: center;

@@ -13,12 +13,9 @@ https://github.com/evacamilla/incremental-game-test
 
 TODO:
 
-user first have to fill out name....
-then displays pick paris image...
-then displays game
-
 paris images one at a time
 
+styling for chosen picture...
 
 --fame points updates too much at first update...
 

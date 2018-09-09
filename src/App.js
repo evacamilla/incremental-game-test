@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header.js';
 import PlayerStats from './components/PlayerStats.js';
-import NameForm from './components/NameForm.js';
+import PlayerForm from './components/PlayerForm.js';
 import Clicker from './components/Clicker.js';
 import CellPhone from './components/upgrades/CellPhone.js';
 import Extentions from './components/upgrades/Extentions.js';
@@ -10,6 +10,9 @@ import Nicole from './components/upgrades/Nicole.js';
 import Tinkerbell from './components/upgrades/Tinkerbell.js';
 import Kim from './components/upgrades/Kim.js';
 import SimpleLife from './components/upgrades/SimpleLife.js';
+import Piercing from './components/upgrades/Piercing.js';
+import Juicy from './components/upgrades/Juicy.js';
+import Sunglasses from './components/upgrades/Sunglasses.js';
 
 class App extends Component {
 
@@ -17,6 +20,7 @@ class App extends Component {
     //unneccessary to have playerIsSet? just check if name has value? 
     playerIsSet: false,
     nameOfPlayer: '',
+    parisImg: null,
     totalPoints: 0,
     fame: 0,
     pointsPerClick: 1,
@@ -25,8 +29,12 @@ class App extends Component {
     automaticPointsMessage: ""
   }
 
-  handleNameForm = (value) => {
-    this.setState({playerIsSet: true, nameOfPlayer: value});
+  handlePlayerForm = (nameOfPlayer, parisImg) => {
+    this.setState({
+      playerIsSet: true, 
+      nameOfPlayer: nameOfPlayer,
+      parisImg: parisImg
+    });
   }
 
   increaseTotalPoints = () => {
@@ -75,7 +83,6 @@ class App extends Component {
     console.log('automatically earned points ' + automaticallyEarnedPoints);
   }
 
-
   render() {
     const { nameOfPlayer, totalPoints, fame, pointsPerClick, pointsPerSecond, automaticPointsMessage } = this.state;
 
@@ -98,13 +105,18 @@ class App extends Component {
                 pointsPerSecond={pointsPerSecond}
                 automaticPointsMessage={automaticPointsMessage} />
 
-              <Clicker onClick={this.increaseTotalPoints}/>
+              <Clicker onClick={this.increaseTotalPoints} parisImg={this.state.parisImg}/>
 
               <div className="upgrades">
-                <h2 className="upgrades-title">Upgrades</h2>
+                <h2 className="upgrades-title">
+                  Upgrades
+                </h2>
                 <div className="upgrades-wrapper">
                   <Extentions makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
                   <CellPhone makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
+                  <Piercing makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
+                  <Juicy makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
+                  <Sunglasses makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
                   <Nicole makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/> 
                   <Tinkerbell makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
                   <Kim makeAnUpgrade={this.makeAnUpgrade} totalPoints={totalPoints}/>
@@ -117,7 +129,7 @@ class App extends Component {
 
             <div>
               <Header />
-              <NameForm handleNameForm={this.handleNameForm} />
+              <PlayerForm handlePlayerForm={this.handlePlayerForm} />
             </div>
 
           )}
