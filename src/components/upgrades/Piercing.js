@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import UpgradeDiv from '../UpgradeDiv.js';
 
-class Kim extends Component {
+class Piercing extends Component {
     state = {
-        title: 'Kim',
+        title: 'Belly Button Piercing',
         description: 'gewewhw',
-        imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhixNnsSy_J4KN7l7FCaPwQHC1bsvuLb4leTjXZ_B58QQp9cUP',
-        cost: 60,
-        auto: true,
-        effect: 2,
-        timesUpgraded: 0,
+        imgUrl: 'https://sjedi5.com/magazin/wp-content/uploads/sites/3/2016/01/piercing-1.png',
+        cost: 10,
+        auto: false,
+        effect: 1,
+        timesUpgraded: 1,
         activated: false
     }
 
@@ -31,7 +31,6 @@ class Kim extends Component {
             console.log("You don't have enough money to update");
         }
     }
-
     render(){
         let activeOrNot = 'not-active';
         if(this.props.totalPoints > this.state.cost){
@@ -43,11 +42,13 @@ class Kim extends Component {
                     activeOrNot={activeOrNot} 
                     imgUrl={this.state.imgUrl} 
                     onClick={this.handleUpgrade} 
-                    effect={this.state.effect}  
+                    title={this.state.title} 
+                    effect={this.state.effect} 
                     cost={this.state.cost} />
             </div>
         );
     }
 }
 
-export default Kim;
+
+export default Piercing;

@@ -6,7 +6,7 @@ class Tinkerbell extends Component {
         title: 'Tinkerbell',
         description: 'gewewhw',
         imgUrl: 'https://s7.ralphlauren.com/is/image/PoloGSI/s7-168187_lifestyle?$rl_392_pdp$',
-        cost: 200,
+        cost: 150,
         auto: false,
         effect: 100,
         timesUpgraded: 0,

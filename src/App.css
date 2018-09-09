@@ -26,6 +26,15 @@ header {
   text-align: center;
 }
 
+.paris-images {
+  margin: 0px auto;
+  text-align: center;
+}
+
+.paris-images img {
+  width: 55%;
+}
+
 .player-stats {
   margin: 0px auto;
   text-align: center;
@@ -39,8 +48,7 @@ header {
 /**Clicker**/
 
 .clicker-img {
-  width: 200px;
-  height: 300px;
+  width: 240px;
   background-size: cover;
   margin: 0px auto;
 }
@@ -113,14 +121,12 @@ header {
   grid-area: s;
 }
 
-
 .clicker {
   grid-area: p;
 }
 
 .clicker-img {
-  width: 500px;
-  height: 700px;
+  width: 400px;
 }
 
 .upgrades {
@@ -128,6 +134,6 @@ header {
 }
 
 .upgrades-wrapper {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 }

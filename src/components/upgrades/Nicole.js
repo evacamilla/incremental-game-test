@@ -5,7 +5,7 @@ class Nicole extends Component {
     state = {
         title: 'Nicole',
         description: 'gewewhw',
-        imgUrl: 'https://images-production.global.ssl.fastly.net/uploads/photos/file/113795/nicole-richie-aug-2003.jpg',
+        imgUrl: 'https://78.media.tumblr.com/fabb4601580ab45ad4dfd2f7a84f12ec/tumblr_inline_mo7qgqmDim1qz4rgp.gif',
         cost: 100,
         auto: false,
         effect: 320,

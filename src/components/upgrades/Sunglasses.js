@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import UpgradeDiv from '../UpgradeDiv.js';
 
-class Kim extends Component {
+class Sunglasses extends Component {
     state = {
-        title: 'Kim',
+        title: 'Sunglasses',
         description: 'gewewhw',
-        imgUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhixNnsSy_J4KN7l7FCaPwQHC1bsvuLb4leTjXZ_B58QQp9cUP',
-        cost: 60,
+        imgUrl: 'https://abshoelu.files.wordpress.com/2013/06/slw770_z42x.png?w=300&h=300',
+        cost: 50,
         auto: true,
         effect: 2,
         timesUpgraded: 0,
@@ -50,4 +50,4 @@ class Kim extends Component {
     }
 }
 
-export default Kim;
+export default Sunglasses;

@@ -6,7 +6,7 @@ class SimpleLife extends Component {
         title: 'Kim',
         description: 'gewewhw',
         imgUrl: 'https://data.whicdn.com/images/67242729/large.png',
-        cost: 50,
+        cost: 80,
         auto: true,
         effect: 2,
         timesUpgraded: 0,
