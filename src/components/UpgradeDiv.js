@@ -7,8 +7,9 @@ function UpgradeDiv(props){
                 <img id={props.id} className={props.activeOrNot} src={props.imgUrl} onClick={props.onClick} />
             </div>
             <div className='upgrade-description'>
+                <p>{props.title}</p>
                 <p>€ {props.cost}</p>
-                <p>E {props.effect}</p>
+                <p>Effect: {props.effect}</p>
             </div>
         </div>
     );

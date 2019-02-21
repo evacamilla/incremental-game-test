@@ -107,6 +107,8 @@ class App extends Component {
 
               <Clicker onClick={this.increaseTotalPoints} parisImg={this.state.parisImg}/>
 
+              <hr />
+              
               <div className="upgrades">
                 <h2 className="upgrades-title">
                   Upgrades

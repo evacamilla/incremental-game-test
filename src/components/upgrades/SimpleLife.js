@@ -3,7 +3,7 @@ import UpgradeDiv from '../UpgradeDiv.js';
 
 class SimpleLife extends Component {
     state = {
-        title: 'Kim',
+        title: 'Simple Life',
         description: 'gewewhw',
         imgUrl: 'https://data.whicdn.com/images/67242729/large.png',
         cost: 80,
@@ -44,7 +44,8 @@ class SimpleLife extends Component {
                     imgUrl={this.state.imgUrl} 
                     onClick={this.handleUpgrade} 
                     effect={this.state.effect}  
-                    cost={this.state.cost} />
+                    cost={this.state.cost} 
+                    title={this.state.title}/>
             </div>
         );
     }

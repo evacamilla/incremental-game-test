@@ -40,11 +40,13 @@ class CellPhone extends Component {
         return(
             <div className="upgrade">
                 <UpgradeDiv 
+                    title={this.state.title}
                     activeOrNot={activeOrNot} 
                     imgUrl={this.state.imgUrl} 
                     onClick={this.handleUpgrade} 
                     effect={this.state.effect}  
-                    cost={this.state.cost} />
+                    cost={this.state.cost} 
+                    title={this.state.title}/>
             </div>
         );
     }

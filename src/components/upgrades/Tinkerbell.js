@@ -47,7 +47,8 @@ class Tinkerbell extends Component {
                     onClick={this.handleUpgrade} 
                     title={this.state.title} 
                     effect={this.state.effect} 
-                    cost={this.state.cost} />
+                    cost={this.state.cost}
+                    title={this.state.title} />
         );
     }
 }

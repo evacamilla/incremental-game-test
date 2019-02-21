@@ -44,7 +44,8 @@ class Sunglasses extends Component {
                     imgUrl={this.state.imgUrl} 
                     onClick={this.handleUpgrade} 
                     effect={this.state.effect}  
-                    cost={this.state.cost} />
+                    cost={this.state.cost}
+                    title={this.state.title} />
             </div>
         );
     }
